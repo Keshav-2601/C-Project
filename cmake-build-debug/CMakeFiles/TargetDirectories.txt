@@ -1,0 +1,3 @@
+C:/Users/Keshav/OneDrive/Bug-Life_Project/cmake-build-debug/CMakeFiles/Bug_Life_Project.dir
+C:/Users/Keshav/OneDrive/Bug-Life_Project/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/Keshav/OneDrive/Bug-Life_Project/cmake-build-debug/CMakeFiles/rebuild_cache.dir
