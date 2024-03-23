@@ -8,9 +8,20 @@
 #include "Bug.h"
 class Crawler: public Bug {
 public:
-    Crawler(int id,pair<int,int> position,int direction,int size,bool alive);
-    void move() override =0;
-    bool isWayBlocked() override =0;
+    int lenght;
+    Crawler(int id,pair<int,int> position,int direction,int length){
+        this->id=id;
+        this->direction=direction;
+        this->position=position;
+        this->size=size;
+        this->lenght=lenght;
+    };
+    void move() override {
+
+    };
+    bool isWayBlocked() override {
+        ;
+    }
 };
 
 

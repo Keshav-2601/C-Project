@@ -11,8 +11,18 @@
 class Hopper: public Bug {
 public:
     int length;//length means the lenagth hopper can hop to .
-    void move() override=0;
-    bool isWayBlocked() override=0;
+    Hopper(int id,pair<int,int>position,int direction,int lenght){
+        this->id=id;
+        this->position=position;
+        this->direction=direction;
+        this->length=length;
+    }
+    void move() override{
+
+    }
+    bool isWayBlocked() override{
+
+    };
 };
 
 
