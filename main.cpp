@@ -4,6 +4,7 @@
 #include "Crawler.h"
 #include "Hopper.h"
 #include<vector>
+#include <iterator>
 using namespace std;
 
 int main() {
@@ -13,20 +14,29 @@ if(inFile){
     vector<Bug*> bugs;
    while(getline(inFile,line)){
           char ch=line.at(0);
+          string str_id=line.substr(2,3);
+          string str_pos1=line.substr(6,1);
+          string str_pos2=line.substr(8,1);
+          string str_dir=line.substr(10,1);
+          string str_len=line.substr(12,1);
           if(ch=='C'){
-               Crawler* c1=new Crawler(line.at(1),{line.at(2),line.at(3)},line.at(4),line.at(5));
+              Crawler* c1=new Crawler(stoi(str_id),{stoi(str_pos1),stoi(str_pos2)},stoi(str_dir), stoi(str_len));
               bugs.push_back(c1);
-              //storing memory in heap becoz if i store it on stack it will detroyed after each iteration so use DMA
+              //storing memory in heap becoz if I store it on stack it will detroyed after each iteration so use DMA
           }
           if(ch=='H'){
-              Hopper* h1=new Hopper(line.at(1),{line.at(2),line.at(3)},line.at(4),line.at(5));
+              Hopper* h1=new Hopper(stoi(str_id),{stoi(str_pos1),stoi(str_pos2)},stoi(str_dir), stoi(str_len));
               bugs.push_back(h1);
           }
 
-          cout<<line<<endl;
+
+    }
+    for(vector<Bug*>::iterator i=bugs.begin();i!=bugs.end();i++){
+
     }
 }
 else{
     cout<<"Not able to open file";
 }
+return 0;
 }

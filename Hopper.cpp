@@ -5,6 +5,3 @@
 #include "Hopper.h"
 using namespace std;
 
-void Hopper::move() {
-
-}
