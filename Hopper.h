@@ -18,10 +18,39 @@ public:
         this->length=length;
     }
     void move() override{
+        if(isWayBlocked()== true){
 
+        }
+        else{
+            if(this->direction==1){
+                this->position.second=this->position.second+1;
+            }
+            if(this->direction==2){
+                this->position.first=this->position.first+1;
+            }
+            if(this->direction==3){
+                this->position.second=this->position.second-1;
+            }
+            if(this->direction==4){
+                this->position.first=this->position.first-1;
+            }
+
+        }
     }
     bool isWayBlocked() override{
-
+        if(this->position.first==0 && this->position.second<=8){
+            return true;
+        }
+        if(this->position.first>=8 && this->position.second==0){
+            return true;
+        }
+        if(this->position.first==8 && this->position.second>=8){
+            return true;
+        }
+        if(this->position.first>=8 && this->position.second==8){
+            return true;
+        }
+        return false;
     };
 };
 
