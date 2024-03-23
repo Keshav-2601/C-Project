@@ -12,12 +12,14 @@ class Bug {
 protected:
     int id;
     int direction;
+    pair<int, int> position;
     int size;
     bool alive;
     list<pair<int,int>>path;
     virtual void move()=0;
     virtual bool isWayBlocked()=0;
 public:
+    Bug();
     Bug(int id,int direction,int size,bool alive);
 };
 

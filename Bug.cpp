@@ -10,3 +10,6 @@ Bug::Bug(int id,int direction,int size,bool alive){
     this->size=size;
     this->alive=alive;
 }
+Bug::Bug() {
+
+}
