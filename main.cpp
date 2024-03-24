@@ -5,27 +5,30 @@
 #include "Hopper.h"
 #include<vector>
 #include <iterator>
+#include <sstream>
+
+
 using namespace std;
 
 int main() {
 ifstream inFile("../C.txt");//use ../C.txt to make it work;
 if(inFile){
     string line;
+
     vector<Bug*> bugs;
    while(getline(inFile,line)){
-          char ch=line.at(0);
-          string str_id=line.substr(2,3);
-          string str_pos1=line.substr(6,1);
-          string str_pos2=line.substr(8,1);
-          string str_dir=line.substr(10,1);
-          string str_len=line.substr(12,1);
-          if(ch=='C'){
-              Crawler* c1=new Crawler(stoi(str_id),{stoi(str_pos1),stoi(str_pos2)},stoi(str_dir), stoi(str_len));
+            vector<string>parts;
+            stringstream ss(line);//u make entire line in ss stream
+            string singlepart;//then u break each string and store it in different string name singlestring
+            getline(ss,singlepart,';');//use for slicing the string using delimiter ";".
+            parts.push_back(singlepart);
+          if(parts[0]=="C"){
+              Crawler* c1=new Crawler(stoi(parts[1]),{stoi(parts[2]),stoi(parts[3])},stoi(parts[4]), stoi(parts[5]));
               bugs.push_back(c1);
               //storing memory in heap becoz if I store it on stack it will detroyed after each iteration so use DMA
           }
-          if(ch=='H'){
-              Hopper* h1=new Hopper(stoi(str_id),{stoi(str_pos1),stoi(str_pos2)},stoi(str_dir), stoi(str_len));
+          if(parts[0]=="H"){
+              Hopper* h1=new Hopper(stoi(parts[1]),{stoi(parts[2]),stoi(parts[3])},stoi(parts[4]), stoi(parts[5]),stoi(parts[6]));
               bugs.push_back(h1);
           }
 

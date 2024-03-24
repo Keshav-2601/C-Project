@@ -11,12 +11,14 @@
 #include "Bug.h"
 
 class Hopper: public Bug {
-public:
+private:
     int length;//length means the lenagth hopper can hop to .
-    Hopper(int id,pair<int,int>position,int direction,int lenght){
+public:
+    Hopper(int id,pair<int,int>position,int direction,int size,int length){
         this->id=id;
         this->position=position;
         this->direction=direction;
+        this->size=size;
         this->length=length;
         srand(time(0));
     }
@@ -33,16 +35,24 @@ public:
         }
         else{
             if(this->direction==1){
+                path.push_back(this->position);
                 this->position.second=this->position.second+1;
+                path.push_back(this->position);
             }
             if(this->direction==2){
+                path.push_back(this->position);
                 this->position.first=this->position.first+1;
+                path.push_back(this->position);
             }
             if(this->direction==3){
+                path.push_back(this->position);
                 this->position.second=this->position.second-1;
+                path.push_back(this->position);
             }
             if(this->direction==4){
+                path.push_back(this->position);
                 this->position.first=this->position.first-1;
+                path.push_back(this->position);
             }
 
         }

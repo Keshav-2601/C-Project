@@ -10,13 +10,11 @@
 #include "Bug.h"
 class Crawler: public Bug {
 public:
-    int lenght;
-    Crawler(int id,pair<int,int> position,int direction,int length){
+    Crawler(int id,pair<int,int> position,int direction,int size){
         this->id=id;
         this->direction=direction;
         this->position=position;
         this->size=size;
-        this->lenght=lenght;
         srand(time(0));
     };
     void move() override {
@@ -32,16 +30,24 @@ public:
         }
         else{
              if(this->direction==1){
+                  path.push_back(this->position);
                   this->position.second=this->position.second+1;
+                  path.push_back(this->position);
               }
             if(this->direction==2){
+                path.push_back(this->position);
                 this->position.first=this->position.first+1;
+                path.push_back(this->position);
             }
             if(this->direction==3){
+                path.push_back(this->position);
                 this->position.second=this->position.second-1;
+                path.push_back(this->position);
             }
             if(this->direction==4){
+                path.push_back(this->position);
                 this->position.first=this->position.first-1;
+                path.push_back(this->position);
             }
 
         }
