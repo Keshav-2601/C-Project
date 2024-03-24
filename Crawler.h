@@ -5,6 +5,8 @@
 #ifndef BUG_LIFE_PROJECT_CRAWLER_H
 #define BUG_LIFE_PROJECT_CRAWLER_H
 
+#include <cstdlib>
+#include <ctime>
 #include "Bug.h"
 class Crawler: public Bug {
 public:
@@ -15,9 +17,17 @@ public:
         this->position=position;
         this->size=size;
         this->lenght=lenght;
+        srand(time(0));
     };
     void move() override {
         if(isWayBlocked()== true){
+            int dir;
+            if(this->direction==1 ||this->direction==2||this->direction==3||this->direction==4){
+                do {
+                    dir=rand()%4+1;
+                }while(this->direction==dir);
+                this->direction=dir;
+            }
 
         }
         else{

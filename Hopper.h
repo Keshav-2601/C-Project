@@ -6,6 +6,8 @@
 #define BUG_LIFE_PROJECT_HOPPER_H
 
 
+#include <cstdlib>
+#include <ctime>
 #include "Bug.h"
 
 class Hopper: public Bug {
@@ -16,9 +18,17 @@ public:
         this->position=position;
         this->direction=direction;
         this->length=length;
+        srand(time(0));
     }
     void move() override{
         if(isWayBlocked()== true){
+            int dir;
+            if(this->direction==1 ||this->direction==2||this->direction==3||this->direction==4){
+                do {
+                    dir=rand()%4+1;
+                }while(this->direction==dir);
+                this->direction=dir;
+            }
 
         }
         else{
@@ -38,16 +48,16 @@ public:
         }
     }
     bool isWayBlocked() override{
-        if(this->position.first==0 && this->position.second<=8){
+        if(this->position.first==0 && this->position.second<=8 && this->direction==3){
             return true;
         }
-        if(this->position.first>=8 && this->position.second==0){
+        if(this->position.first>=8 && this->position.second==0 && this->direction==4){
             return true;
         }
-        if(this->position.first==8 && this->position.second>=8){
+        if(this->position.first==8 && this->position.second>=8 && this->direction==2){
             return true;
         }
-        if(this->position.first>=8 && this->position.second==8){
+        if(this->position.first>=8 && this->position.second==8 && this->direction==1){
             return true;
         }
         return false;
