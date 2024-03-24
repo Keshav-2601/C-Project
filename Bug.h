@@ -21,6 +21,7 @@ protected:
 public:
     Bug();
     Bug(int id,int direction,int size,bool alive);
+   void show();
 };
 
 

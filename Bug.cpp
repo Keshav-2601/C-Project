@@ -3,6 +3,8 @@
 //
 
 #include "Bug.h"
+#include <iostream>
+
 using namespace std;
 Bug::Bug(int id,int direction,int size,bool alive){
     this->id=id;
@@ -12,4 +14,12 @@ Bug::Bug(int id,int direction,int size,bool alive){
 }
 Bug::Bug() {
 
+}
+
+ void Bug::show() {
+     cout<<"Id:"<<this->id<<endl;
+     cout<<"x-position:"<<this->position.first<<endl;
+     cout<<"y-position:"<<this->position.second<<endl;
+     cout<<"direction:"<<this->direction<<endl;
+     cout<<"size:"<<this->size;
 }

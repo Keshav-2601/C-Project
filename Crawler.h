@@ -4,10 +4,11 @@
 
 #ifndef BUG_LIFE_PROJECT_CRAWLER_H
 #define BUG_LIFE_PROJECT_CRAWLER_H
-
 #include <cstdlib>
 #include <ctime>
+#include <iostream>
 #include "Bug.h"
+using namespace std;
 class Crawler: public Bug {
 public:
     Crawler(int id,pair<int,int> position,int direction,int size){
@@ -67,6 +68,7 @@ public:
         }
         return false;
     }
+    void showproperties();
 };
 
 
