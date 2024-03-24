@@ -36,22 +36,22 @@ public:
         else{
             if(this->direction==1){
                 path.push_back(this->position);
-                this->position.second=this->position.second+1;
+                this->position.second=this->position.second+this->length;
                 path.push_back(this->position);
             }
             if(this->direction==2){
                 path.push_back(this->position);
-                this->position.first=this->position.first+1;
+                this->position.first=this->position.first+this->length;
                 path.push_back(this->position);
             }
             if(this->direction==3){
                 path.push_back(this->position);
-                this->position.second=this->position.second-1;
+                this->position.second=this->position.second-this->length;
                 path.push_back(this->position);
             }
             if(this->direction==4){
                 path.push_back(this->position);
-                this->position.first=this->position.first-1;
+                this->position.first=this->position.first-this->length;
                 path.push_back(this->position);
             }
 
