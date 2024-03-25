@@ -41,6 +41,11 @@ public:
         cout<<"Bug Not Found!";
         return "Bug Not Found!";
     }
+    void TapBoard(){
+        for(vector<Bug*>::iterator i=bugs.begin();i!=bugs.end();i++){
+            (*i)->move();
+        }
+    }
 };
 
 

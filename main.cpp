@@ -44,7 +44,8 @@ if(inFile){
         b1.addbug(*i);
     }
     //b1.showbug();
-    b1.findbug();
+    //  b1.findbug();
+    b1.TapBoard();
 
 }
 else{
