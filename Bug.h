@@ -7,9 +7,12 @@
 
 #include <list>
 #include <utility>
+#include <string>
+
 using namespace std;
 class Bug {
 protected:
+    string type;
     int id;
     int direction;
     pair<int, int> position;

@@ -26,13 +26,13 @@ if(inFile){
                 parts.push_back(singlepart);
             }
             if (parts[0] == "C") {
-                    Crawler *c1 = new Crawler(stoi(parts[1]), {stoi(parts[2]), stoi(parts[3])}, stoi(parts[4]),
+                    Crawler *c1 = new Crawler(parts[0],stoi(parts[1]), {stoi(parts[2]), stoi(parts[3])}, stoi(parts[4]),
                                               stoi(parts[5]));
                     bug_vector.push_back(c1);
                     //storing memory in heap becoz if I store it on stack it will detroyed after each iteration so use DMA
                 }
             if (parts[0] == "H") {
-                    Hopper *h1 = new Hopper(stoi(parts[1]), {stoi(parts[2]), stoi(parts[3])}, stoi(parts[4]),
+                    Hopper *h1 = new Hopper(parts[0],stoi(parts[1]), {stoi(parts[2]), stoi(parts[3])}, stoi(parts[4]),
                                             stoi(parts[5]), stoi(parts[6]));
                     bug_vector.push_back(h1);
                 }
@@ -46,6 +46,7 @@ if(inFile){
     //b1.showbug();
     //  b1.findbug();
     b1.TapBoard();
+    cout<<endl;
     b1.LifeHistory();
 
 }

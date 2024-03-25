@@ -49,6 +49,7 @@ public:
     void LifeHistory(){
         for(vector<Bug*>::iterator i=bugs.begin();i!=bugs.end();i++){
             (*i)->PathHistory();
+            cout<<endl;
         }
     }
 };

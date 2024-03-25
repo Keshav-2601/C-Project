@@ -45,5 +45,7 @@ int Bug::giveid() {
     return this->id;
 }
 void Bug::PathHistory() {
-   this->path;
+   for(auto i=path.begin(); i!=path.end();i++){
+       cout<<this->id<<" "<<this->type<<" {"<<(*i).first<<","<<(*i).second<<"}"<<endl;
+   }
 }

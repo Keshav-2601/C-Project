@@ -8,13 +8,16 @@
 
 #include <cstdlib>
 #include <ctime>
+#include <string>
 #include "Bug.h"
 
 class Hopper: public Bug {
 private:
     int length;//length means the lenagth hopper can hop to .
 public:
-    Hopper(int id,pair<int,int>position,int direction,int size,int length){
+
+    Hopper(string type,int id,pair<int,int>position,int direction,int size,int length){
+        this->type=type;
         this->id=id;
         this->position=position;
         this->direction=direction;

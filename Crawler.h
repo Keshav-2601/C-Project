@@ -11,7 +11,9 @@
 using namespace std;
 class Crawler: public Bug {
 public:
-    Crawler(int id,pair<int,int> position,int direction,int size){
+
+    Crawler(string type,int id,pair<int,int> position,int direction,int size){
+        this->type=type;
         this->id=id;
         this->direction=direction;
         this->position=position;
