@@ -68,7 +68,7 @@ public:
         }
         return false;
     }
-    void showproperties();
+
 };
 
 

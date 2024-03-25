@@ -38,7 +38,8 @@ if(inFile){
                 }
 
     }
-    Board b1;
+    Board b1;//create a board object
+    //iterating iver vector<Bug*>bugs and adding it into vector <Bug*>bugs of board class.
     for(vector<Bug*>::iterator i=bugs.begin();i!=bugs.end();i++){
         b1.addbug(*i);
     }

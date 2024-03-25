@@ -24,7 +24,7 @@ public:
     }
     void showbug(){
         for(vector<Bug*>::iterator i=bugs.begin();i!=bugs.end();i++){
-            (*i)->show();
+            (*i)->show();//deferenicng the *i to get **i ..we use -> .
         }
     }
 };

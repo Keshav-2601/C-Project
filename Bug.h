@@ -14,14 +14,14 @@ protected:
     int direction;
     pair<int, int> position;
     int size;
-    bool alive;
+    bool alive= true;
     list<pair<int,int>>path;
     virtual void move()=0;
     virtual bool isWayBlocked()=0;
 public:
     Bug();
-    Bug(int id,int direction,int size,bool alive);
-   void show();
+//    Bug(int id,int direction,int size,bool alive);
+    void show();
 };
 
 
