@@ -43,7 +43,12 @@ public:
     }
     void TapBoard(){
         for(vector<Bug*>::iterator i=bugs.begin();i!=bugs.end();i++){
-            (*i)->move();
+            (*i)->performedmove();
+        }
+    }
+    void LifeHistory(){
+        for(vector<Bug*>::iterator i=bugs.begin();i!=bugs.end();i++){
+            (*i)->PathHistory();
         }
     }
 };

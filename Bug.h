@@ -16,14 +16,18 @@ protected:
     int size;
     bool alive= true;
     list<pair<int,int>>path;
-
-public:
     virtual void move()=0;
     virtual bool isWayBlocked()=0;
+public:
+    void performedmove(){
+        move();
+        isWayBlocked();
+    }
     Bug();
 //    Bug(int id,int direction,int size,bool alive);
     void show();
     int giveid();
+    void PathHistory();
 };
 
 

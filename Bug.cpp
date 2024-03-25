@@ -44,3 +44,6 @@ Bug::Bug() {
 int Bug::giveid() {
     return this->id;
 }
+void Bug::PathHistory() {
+   this->path;
+}
