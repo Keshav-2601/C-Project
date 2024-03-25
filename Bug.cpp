@@ -41,3 +41,6 @@ Bug::Bug() {
 
      cout<<endl;
 }
+int Bug::giveid() {
+    return this->id;
+}

@@ -43,7 +43,8 @@ if(inFile){
     for(vector<Bug*>::iterator i=bugs.begin();i!=bugs.end();i++){
         b1.addbug(*i);
     }
-    b1.showbug();
+    //b1.showbug();
+    b1.findbug();
 
 }
 else{

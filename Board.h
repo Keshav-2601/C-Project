@@ -27,6 +27,20 @@ public:
             (*i)->show();//deferenicng the *i to get **i ..we use -> .
         }
     }
+     string findbug(){
+        cout<<"enter the bug_id:"<<endl;
+        int id;
+        cin>>id;
+        for(vector<Bug*>::iterator i=bugs.begin();i!=bugs.end();i++){
+            if(id==(*i)->giveid()){
+                cout<< "Id found Bug is:"<<endl;
+                (*i)->show();
+                 return "Found!!";
+            }
+        }
+        cout<<"Bug Not Found!";
+        return "Bug Not Found!";
+    }
 };
 
 
