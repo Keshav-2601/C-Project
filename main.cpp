@@ -15,9 +15,8 @@ int main() {
 ifstream inFile("../C.txt");//use ../C.txt to make it work;
 if(inFile){
     string line;
-
     vector<Bug*> bug_vector;
-   while(getline(inFile,line)){
+    while(getline(inFile,line)){
             vector<string>parts;
             stringstream ss(line);//u make entire line in ss stream
             string singlepart;//then u break each string and store it in different string name singlestring
@@ -43,9 +42,16 @@ if(inFile){
     for(vector<Bug*>::iterator i=bug_vector.begin(); i != bug_vector.end(); i++){
         b1.addbug(*i);
     }
+    b1.TapBoard();
     b1.display_all_cells();
 
-
+/**
+ * Deleting the dynamic memory after using it .
+ */
+    for(Bug* bug: bug_vector){
+        delete bug;
+        bug= nullptr;
+    }
 }
 else{
     cout<<"Not able to open file";

@@ -33,6 +33,7 @@ public:
     void PathHistory();
     pair<int,int> giveposition();
     string typeofbug();
+    int ids();
 };
 
 

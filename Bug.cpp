@@ -55,3 +55,6 @@ pair<int,int> Bug::giveposition() {
 string Bug::typeofbug() {
     return this->type;
 }
+int Bug::ids() {
+    return this->id;
+}

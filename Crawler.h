@@ -28,6 +28,7 @@ public:
                     dir=rand()%4+1;
                 }while(this->direction==dir);
                 this->direction=dir;
+                move();
             }
 
         }
@@ -56,16 +57,16 @@ public:
         }
     };
     bool isWayBlocked() override {
-        if(this->position.first==0 && this->position.second<=10 && this->direction==3){
+        if(this->position.first==0 && this->position.second<=9 && this->direction==3){
             return true;
         }
-        if(this->position.first>=8 && this->position.second==0 && this->direction==4){
+        if(this->position.first<=9 && this->position.second==0 && this->direction==4){
             return true;
         }
-        if(this->position.first==8 && this->position.second>=10 && this->direction==2){
+        if(this->position.first==9 && this->position.second>=9 && this->direction==2){
             return true;
         }
-        if(this->position.first>=8 && this->position.second==10 && this->direction==1){
+        if(this->position.first>=9 && this->position.second==9 && this->direction==1){
             return true;
         }
         return false;

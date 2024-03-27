@@ -48,12 +48,7 @@ public:
     }
     void TapBoard(){
         for(vector<Bug*>::iterator i=bugs.begin();i!=bugs.end();i++){
-            for(vector<Cell>::iterator j=cells.begin();j!=cells.end();j++){
-                if((*i)->giveposition()==(*j).position_of_cell){
-                    (*j).bug_occupying=*i;
-                    (*j).isocupied=true;
-                }
-            }
+            (*i)->performedmove();
         }
     }
     void display_all_cells(){
@@ -70,7 +65,7 @@ public:
                 cout<<"{"<<(*i).position_of_cell.first<<","<<(*i).position_of_cell.second<<"}: "<<"empty"<<endl;
             }
             if((*i).isocupied){
-                cout<<"{"<<(*i).position_of_cell.first<<","<<(*i).position_of_cell.second<<"}:"<<((*i).bug_occupying)->typeofbug()<<endl;
+                cout<<"{"<<(*i).position_of_cell.first<<","<<(*i).position_of_cell.second<<"}:"<<((*i).bug_occupying)->typeofbug()<<" "<<((*i).bug_occupying)->ids()<<endl;
             }
         }
     }
