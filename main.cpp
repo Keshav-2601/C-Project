@@ -38,16 +38,13 @@ if(inFile){
                 }
 
     }
-    Board b1;//create a board object
+    Board b1(10,10);//create a board object
     //iterating iver vector<Bug*>bug_vector and adding it into vector <Bug*>bug_vector of board class.
     for(vector<Bug*>::iterator i=bug_vector.begin(); i != bug_vector.end(); i++){
         b1.addbug(*i);
     }
-    //b1.showbug();
-    //  b1.findbug();
-    b1.TapBoard();
-    cout<<endl;
-    b1.LifeHistory();
+    b1.display_all_cells();
+
 
 }
 else{

@@ -10,14 +10,19 @@
 using namespace std;
 class Board {
 private:
-    vector<vector<Cell>>cells;
+    vector<Cell>cells;
     vector<Bug*>bugs;
 public:
     Board(){
 
     }
     Board(int height,int width){
-
+        for(int i=0;i<height;i++){
+            for(int j=0;j<width;j++){
+                Cell c1(i,j);
+                cells.push_back(c1);
+            }
+        }
     }
     void addbug(Bug* bug){
         this->bugs.push_back(bug);
@@ -43,7 +48,30 @@ public:
     }
     void TapBoard(){
         for(vector<Bug*>::iterator i=bugs.begin();i!=bugs.end();i++){
-            (*i)->performedmove();
+            for(vector<Cell>::iterator j=cells.begin();j!=cells.end();j++){
+                if((*i)->giveposition()==(*j).position_of_cell){
+                    (*j).bug_occupying=*i;
+                    (*j).isocupied=true;
+                }
+            }
+        }
+    }
+    void display_all_cells(){
+        for(vector<Bug*>::iterator i=bugs.begin();i!=bugs.end();i++){
+            for(vector<Cell>::iterator j=cells.begin();j!=cells.end();j++){
+                if((*i)->giveposition()==(*j).position_of_cell){
+                    (*j).bug_occupying=*i;
+                    (*j).isocupied=true;
+                }
+            }
+        }
+        for(vector<Cell>::iterator i=cells.begin();i!=cells.end();i++){
+            if(!(*i).isocupied){
+                cout<<"{"<<(*i).position_of_cell.first<<","<<(*i).position_of_cell.second<<"}: "<<"empty"<<endl;
+            }
+            if((*i).isocupied){
+                cout<<"{"<<(*i).position_of_cell.first<<","<<(*i).position_of_cell.second<<"}:"<<((*i).bug_occupying)->typeofbug()<<endl;
+            }
         }
     }
     void LifeHistory(){

@@ -31,6 +31,8 @@ public:
     void show();
     int giveid();
     void PathHistory();
+    pair<int,int> giveposition();
+    string typeofbug();
 };
 
 

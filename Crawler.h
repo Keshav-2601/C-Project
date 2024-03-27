@@ -56,16 +56,16 @@ public:
         }
     };
     bool isWayBlocked() override {
-        if(this->position.first==0 && this->position.second<=8 && this->direction==3){
+        if(this->position.first==0 && this->position.second<=10 && this->direction==3){
             return true;
         }
         if(this->position.first>=8 && this->position.second==0 && this->direction==4){
             return true;
         }
-        if(this->position.first==8 && this->position.second>=8 && this->direction==2){
+        if(this->position.first==8 && this->position.second>=10 && this->direction==2){
             return true;
         }
-        if(this->position.first>=8 && this->position.second==8 && this->direction==1){
+        if(this->position.first>=8 && this->position.second==10 && this->direction==1){
             return true;
         }
         return false;

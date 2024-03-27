@@ -49,3 +49,9 @@ void Bug::PathHistory() {
        cout<<this->id<<" "<<this->type<<" {"<<(*i).first<<","<<(*i).second<<"}"<<endl;
    }
 }
+pair<int,int> Bug::giveposition() {
+    return this->position;
+}
+string Bug::typeofbug() {
+    return this->type;
+}
