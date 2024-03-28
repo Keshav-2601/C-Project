@@ -52,6 +52,7 @@ if(inFile){
         delete bug;
         bug= nullptr;
     }
+
 }
 else{
     cout<<"Not able to open file";

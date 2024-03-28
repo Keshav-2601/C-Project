@@ -52,11 +52,11 @@ public:
         }
     }
     void display_all_cells(){
-        for(vector<Bug*>::iterator i=bugs.begin();i!=bugs.end();i++){
-            for(vector<Cell>::iterator j=cells.begin();j!=cells.end();j++){
-                if((*i)->giveposition()==(*j).position_of_cell){
-                    (*j).bug_occupying=*i;
-                    (*j).isocupied=true;
+        for(vector<Cell>::iterator i=cells.begin();i!=cells.end();i++){
+            for(vector<Bug*>::iterator j=bugs.begin();j!=bugs.end();j++){
+                if((*j)->giveposition()==(*i).position_of_cell){
+                    (*i).bug_occupying.push_back(*j);
+                    (*i).isocupied=true;
                 }
             }
         }
@@ -65,10 +65,13 @@ public:
                 cout<<"{"<<(*i).position_of_cell.first<<","<<(*i).position_of_cell.second<<"}: "<<"empty"<<endl;
             }
             if((*i).isocupied){
-                cout<<"{"<<(*i).position_of_cell.first<<","<<(*i).position_of_cell.second<<"}:"<<((*i).bug_occupying)->typeofbug()<<" "<<((*i).bug_occupying)->ids()<<endl;
+                for(int j=0;j<(*i).bug_occupying.size();j++){
+                    cout<<"{"<<(*i).position_of_cell.first<<","<<(*i).position_of_cell.second<<"}:"<<" "<<((*i).bug_occupying)[j]->typeofbug()<<" "<<((*i).bug_occupying)[j]->ids()<<endl;
+                }
             }
         }
     }
+
     void LifeHistory(){
         for(vector<Bug*>::iterator i=bugs.begin();i!=bugs.end();i++){
             (*i)->PathHistory();
