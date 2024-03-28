@@ -34,6 +34,9 @@ public:
     pair<int,int> giveposition();
     string typeofbug();
     int ids();
+
+    int getsizeofbug();
+    bool alivestatus();
 };
 
 

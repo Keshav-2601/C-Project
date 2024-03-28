@@ -58,3 +58,9 @@ string Bug::typeofbug() {
 int Bug::ids() {
     return this->id;
 }
+int Bug::getsizeofbug() {
+    return this->size;
+}
+bool Bug::alivestatus() {
+    return this->alive;
+}
