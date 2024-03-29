@@ -61,6 +61,4 @@ int Bug::ids() {
 int Bug::getsizeofbug() {
     return this->size;
 }
-bool Bug::alivestatus() {
-    return this->alive;
-}
+

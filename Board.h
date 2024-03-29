@@ -13,6 +13,8 @@ private:
     vector<Cell>cells;
     vector<Bug*>bugs;
 public:
+
+
     Board(){
 
     }
@@ -66,43 +68,17 @@ public:
             }
             if((*i).isocupied){
                 for(int j=0;j<(*i).bug_occupying.size();j++){
-                    cout<<"{"<<(*i).position_of_cell.first<<","<<(*i).position_of_cell.second<<"}:"<<" "<<((*i).bug_occupying)[j]->typeofbug()<<" "<<((*i).bug_occupying)[j]->ids()<<endl;
+                    cout<<"{"<<(*i).position_of_cell.first<<","<<(*i).position_of_cell.second<<"}:"<<" "<<((*i).bug_occupying)[j]->typeofbug()<<" "<<((*i).bug_occupying)[j]->ids()<<" "<<((*i).bug_occupying)[j]->getsizeofbug()<<endl;
                 }
             }
         }
     }
-    void eat_functionality(){
-        for(vector<Cell>::iterator i=cells.begin();i!=cells.end();i++){
-            for(vector<Bug*>::iterator j=bugs.begin();j!=bugs.end();j++){
-                if((*j)->giveposition()==(*i).position_of_cell){
-                    (*i).bug_occupying.push_back(*j);
-                    (*i).isocupied=true;
-                }
-            }
-        }
-        for(vector<Cell>::iterator i=cells.begin();i!=cells.end();i++){
-            if((*i).isocupied){
-                int max_size=((*i).bug_occupying)[0]->getsizeofbug();
-                int id_of_bug_with_max_size;
-                for(int j=1;j<(*i).bug_occupying.size();j++){
-                    if(((*i).bug_occupying)[j]->getsizeofbug() > max_size){
-                        max_size=((*i).bug_occupying)[j]->getsizeofbug();
-                        id_of_bug_with_max_size=((*i).bug_occupying)[j]->ids();
-                    }
-                }
-                for(int k=0;k<((*i).bug_occupying).size();k++){
-                   if( ((*i).bug_occupying)[k]->ids()!=id_of_bug_with_max_size){
-                         max_size=max_size +((*i).bug_occupying)[k]->getsizeofbug();
-                       bool status=(*i).bug_occupying[k]->alivestatus();
-                       status= false;
-                       int size_of_bug=((*i).bug_occupying)[k]->getsizeofbug();
-                       size_of_bug=0;
-                    }
-                }
+    void eat_functionality() {
 
-            }
-        }
     }
+
+
+
     void LifeHistory(){
         for(vector<Bug*>::iterator i=bugs.begin();i!=bugs.end();i++){
             (*i)->PathHistory();

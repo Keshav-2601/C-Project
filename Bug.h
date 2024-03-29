@@ -36,7 +36,8 @@ public:
     int ids();
 
     int getsizeofbug();
-    bool alivestatus();
+
+
 };
 
 

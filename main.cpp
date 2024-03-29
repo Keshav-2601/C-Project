@@ -43,7 +43,10 @@ if(inFile){
         b1.addbug(*i);
     }
     b1.TapBoard();
+    b1.TapBoard();
+    b1.TapBoard();
     b1.display_all_cells();
+    b1.eat_functionality();
 
 /**
  * Deleting the dynamic memory after using it .
