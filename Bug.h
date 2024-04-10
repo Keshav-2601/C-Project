@@ -36,7 +36,7 @@ public:
     int ids();
 
     int getsizeofbug();
-
+    void eaten_bug();
 
 };
 

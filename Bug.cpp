@@ -61,4 +61,7 @@ int Bug::ids() {
 int Bug::getsizeofbug() {
     return this->size;
 }
-
+void Bug::eaten_bug() {
+    this->alive= false;
+    this->size=0;
+}

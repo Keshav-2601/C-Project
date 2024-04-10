@@ -29,6 +29,7 @@ public:
     void addbug(Bug* bug){
         this->bugs.push_back(bug);
     }
+
     void showbug(){
         for(vector<Bug*>::iterator i=bugs.begin();i!=bugs.end();i++){
             (*i)->show();//deferenicng the *i to get **i ..we use -> .
@@ -74,7 +75,30 @@ public:
         }
     }
     void eat_functionality() {
+         for(vector<Cell>::iterator i=cells.begin();i!=cells.end();i++){
+             if((*i).isocupied){
+                 Bug* bug=(*i).bug_occupying[0];//max sized Bug
+                 vector<Bug*>restBugs;//Have all the rest bugs other than Max sized one.
+                 for(int j=1; j<(*i).bug_occupying.size();j++){
+                     if(bug->getsizeofbug()<(*i).bug_occupying[j]->getsizeofbug()){
+                         bug=(*i).bug_occupying[j];
+                     }
+                     else{
+                         restBugs.push_back((*i).bug_occupying[j]);
+                     }
+                 }
+                 //I will remove/erase that bug from orginal vectors list
+                 for(vector<Bug*>::iterator i=bugs.begin();i!=bugs.end();i++){
+                    for(vector<Bug*>::iterator j=restBugs.begin();j!=restBugs.end();j++) {
+                        if ((*i) == (*j)) {
+                            (*i)->eaten_bug();
+                        }
+                    }
+                 }
+                 //need to erase and remove from cell and vector too.
+             }
 
+         }
     }
 
 

@@ -16,11 +16,7 @@ public:
     bool isocupied;
     vector<Bug*>bug_occupying;//give vector because one cell can be occupied by 2 or more bugs i cound have given array also it's ur choice
 
-    Cell(int x,int y){
-        position_of_cell={x,y};
-        this->isocupied=false;
-
-    }
+    Cell(int x,int y);
 
 };
 

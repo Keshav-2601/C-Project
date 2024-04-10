@@ -3,3 +3,10 @@
 //
 
 #include "Cell.h"
+
+
+Cell::Cell(int x, int y) {
+    position_of_cell={x,y};
+    this->isocupied=false;
+
+}
