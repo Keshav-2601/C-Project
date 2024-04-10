@@ -95,13 +95,15 @@ public:
                         }
                     }
                  }
-                 //need to erase and remove from cell and vector too.
+
              }
 
          }
     }
 
+    void makingnewbug(){
 
+    }
 
     void LifeHistory(){
         for(vector<Bug*>::iterator i=bugs.begin();i!=bugs.end();i++){

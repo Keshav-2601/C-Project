@@ -65,3 +65,6 @@ void Bug::eaten_bug() {
     this->alive= false;
     this->size=0;
 }
+bool Bug::status() {
+    return this->alive;
+}

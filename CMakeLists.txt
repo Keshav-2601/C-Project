@@ -13,4 +13,6 @@ add_executable(Bug_Life_Project main.cpp
         Cell.cpp
         Cell.h
         Board.cpp
-        Board.h)
+        Board.h
+        NewBugType.cpp
+        NewBugType.h)

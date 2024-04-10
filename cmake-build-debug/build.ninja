@@ -85,6 +85,12 @@ build CMakeFiles/Bug_Life_Project.dir/Board.cpp.obj: CXX_COMPILER__Bug_Life_Proj
   OBJECT_DIR = CMakeFiles\Bug_Life_Project.dir
   OBJECT_FILE_DIR = CMakeFiles\Bug_Life_Project.dir
 
+build CMakeFiles/Bug_Life_Project.dir/NewBugType.cpp.obj: CXX_COMPILER__Bug_Life_Project_unscanned_Debug C$:/Users/Keshav/OneDrive/Bug-Life_Project/NewBugType.cpp || cmake_object_order_depends_target_Bug_Life_Project
+  DEP_FILE = CMakeFiles\Bug_Life_Project.dir\NewBugType.cpp.obj.d
+  FLAGS = -g -fdiagnostics-color=always
+  OBJECT_DIR = CMakeFiles\Bug_Life_Project.dir
+  OBJECT_FILE_DIR = CMakeFiles\Bug_Life_Project.dir
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target Bug_Life_Project
@@ -93,7 +99,7 @@ build CMakeFiles/Bug_Life_Project.dir/Board.cpp.obj: CXX_COMPILER__Bug_Life_Proj
 #############################################
 # Link the executable Bug_Life_Project.exe
 
-build Bug_Life_Project.exe: CXX_EXECUTABLE_LINKER__Bug_Life_Project_Debug CMakeFiles/Bug_Life_Project.dir/main.cpp.obj CMakeFiles/Bug_Life_Project.dir/Bug.cpp.obj CMakeFiles/Bug_Life_Project.dir/Crawler.cpp.obj CMakeFiles/Bug_Life_Project.dir/Hopper.cpp.obj CMakeFiles/Bug_Life_Project.dir/Cell.cpp.obj CMakeFiles/Bug_Life_Project.dir/Board.cpp.obj
+build Bug_Life_Project.exe: CXX_EXECUTABLE_LINKER__Bug_Life_Project_Debug CMakeFiles/Bug_Life_Project.dir/main.cpp.obj CMakeFiles/Bug_Life_Project.dir/Bug.cpp.obj CMakeFiles/Bug_Life_Project.dir/Crawler.cpp.obj CMakeFiles/Bug_Life_Project.dir/Hopper.cpp.obj CMakeFiles/Bug_Life_Project.dir/Cell.cpp.obj CMakeFiles/Bug_Life_Project.dir/Board.cpp.obj CMakeFiles/Bug_Life_Project.dir/NewBugType.cpp.obj
   FLAGS = -g
   LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\Bug_Life_Project.dir
