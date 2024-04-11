@@ -4,6 +4,7 @@
 #include "Crawler.h"
 #include "Hopper.h"
 #include "Board.h"
+#include "NewBugType.h"
 #include<vector>
 #include <iterator>
 #include <sstream>
@@ -35,20 +36,21 @@ if(inFile){
                                             stoi(parts[5]), stoi(parts[6]));
                     bug_vector.push_back(h1);
                 }
-
     }
     Board b1(10,10);//create a board object
     //iterating iver vector<Bug*>bug_vector and adding it into vector <Bug*>bug_vector of board class.
     for(vector<Bug*>::iterator i=bug_vector.begin(); i != bug_vector.end(); i++){
         b1.addbug(*i);
     }
-    b1.TapBoard();
-    b1.TapBoard();
-    b1.TapBoard();
+    //creating menus from here//
+
+
+//    b1.eat_functionality();
+    b1.makingnewbug();
     b1.display_all_cells();
-    b1.eat_functionality();
 
 /**
+ *
  * Deleting the dynamic memory after using it .
  */
     for(Bug* bug: bug_vector){

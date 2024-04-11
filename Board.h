@@ -5,6 +5,7 @@
 #ifndef BUG_LIFE_PROJECT_BOARD_H
 #define BUG_LIFE_PROJECT_BOARD_H
 #include "Cell.h"
+#include "NewBugType.h"
 #include <vector>
 #include <iostream>
 using namespace std;
@@ -102,6 +103,28 @@ public:
     }
 
     void makingnewbug(){
+        int id;
+        int size;
+        int direction;
+        string type;
+        pair<int,int>pos;
+        cout<<"enter first position:"<<endl;
+        cin>>pos.first;
+        cout<<"enter second position:"<<endl;
+        cin>>pos.second;
+        cout<<"enter Id:"<<endl;
+        cin>>id;
+        cout<<"enter size:"<<endl;
+        cin>>size;
+        cout<<"enter initial direction:"<<endl;
+        cin>> direction;
+        cout<<"enter type:"<<endl;
+        cin>>type;
+
+         NewBugType *n1=new NewBugType(type,id,pos,direction,size);
+
+         //making it a part of bug vector list
+         bugs.push_back(n1);
 
     }
 

@@ -15,28 +15,28 @@ void NewBugType::move() {
     }
     else{
         if(this->direction==1){
-            this->path.push_back(this->position);
+            path.push_back(this->position);
             this->position.first=this->position.first+1;
             this->position.second=this->position.second+1;
-            this->path.push_back(this->position);
+            path.push_back(this->position);
         }
         if(this->direction==2){
-            this->path.push_back(this->position);
+            path.push_back(this->position);
             this->position.first=this->position.first+1;
             this->position.second=this->position.second-1;
-            this->path.push_back(this->position);
+            path.push_back(this->position);
         }
         if(this->direction==3){
-            this->path.push_back(this->position);
+            path.push_back(this->position);
             this->position.first=this->position.first-1;
             this->position.second=this->position.second-1;
-            this->path.push_back(this->position);
+            path.push_back(this->position);
         }
         if(this->direction==4){
-            this->path.push_back(this->position);
+            path.push_back(this->position);
             this->position.first=this->position.first-1;
             this->position.second=this->position.second+1;
-            this->path.push_back(this->position);
+            path.push_back(this->position);
         }
     }
 }

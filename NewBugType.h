@@ -10,14 +10,16 @@
 
 class NewBugType: public Bug{
 public:
-    NewBugType(int size,int id,string type,bool isalive){
-        this->size=size;
-        this->id=id;
+    NewBugType(string type,int id, pair<int,int> pos, int direction,int size){
         this->type=type;
-        this->alive=isalive;
+        this->id=id;
+        this->position=pos;
+        this->direction=direction;
+        this->size=size;
+
     }
    //method from Bug class
-    void move() override;//My newBug can walk 3 units in any directions regardless where it's face is facing
+    void move() override;//will move in right diagonal.
     bool isWayBlocked() override;
 };
 
