@@ -8,6 +8,9 @@
 #include <list>
 #include <utility>
 #include <string>
+#include <fstream>
+
+
 
 using namespace std;
 class Bug {
@@ -30,7 +33,8 @@ public:
 //    Bug(int id,int direction,int size,bool alive);
     void show();
     int giveid();
-    void PathHistory();
+    void PathHistory(ofstream& outFile);
+    void initial_path_history();
     pair<int,int> giveposition();
     string typeofbug();
     int ids();

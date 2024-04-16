@@ -8,6 +8,8 @@
 #include "NewBugType.h"
 #include <vector>
 #include <iostream>
+#include <fstream>
+
 using namespace std;
 class Board {
 private:
@@ -128,10 +130,16 @@ public:
 
     }
 
-    void LifeHistory(){
+    void bug_history(){
         for(vector<Bug*>::iterator i=bugs.begin();i!=bugs.end();i++){
-            (*i)->PathHistory();
+            (*i)->initial_path_history();
             cout<<endl;
+        }
+    }
+    void LifeHistory(ofstream& outFile){
+        for(vector<Bug*>::iterator i=bugs.begin();i!=bugs.end();i++){
+            (*i)->PathHistory(outFile);
+            outFile<<endl;
         }
     }
 };

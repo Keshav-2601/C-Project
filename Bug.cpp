@@ -44,10 +44,15 @@ Bug::Bug() {
 int Bug::giveid() {
     return this->id;
 }
-void Bug::PathHistory() {
+void Bug::PathHistory(ofstream& outFile) {
    for(auto i=path.begin(); i!=path.end();i++){
-       cout<<this->id<<" "<<this->type<<" {"<<(*i).first<<","<<(*i).second<<"}"<<endl;
+       outFile << this->id << " " << this->type << " {" << (*i).first << "," << (*i).second << "}" << endl;
    }
+}
+void Bug::initial_path_history() {
+    for(auto i=path.begin(); i!=path.end();i++){
+        cout<<this->id<<" "<<this->type<<" {"<<(*i).first<<","<<(*i).second<<"}"<<endl;
+    }
 }
 pair<int,int> Bug::giveposition() {
     return this->position;
