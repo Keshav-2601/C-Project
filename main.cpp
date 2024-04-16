@@ -46,7 +46,7 @@ if(inFile){
 
 
 //    b1.eat_functionality();
-    b1.makingnewbug();
+//    b1.makingnewbug();
     b1.display_all_cells();
 
 /**

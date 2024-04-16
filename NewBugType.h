@@ -16,7 +16,6 @@ public:
         this->position=pos;
         this->direction=direction;
         this->size=size;
-
     }
    //method from Bug class
     void move() override;//will move in right diagonal.
