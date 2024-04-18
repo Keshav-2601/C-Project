@@ -41,6 +41,7 @@ public:
 
     int getsizeofbug();
     void eaten_bug();
+    void winnerbugsize(int size);
     bool status();
 };
 

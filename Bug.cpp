@@ -73,3 +73,6 @@ void Bug::eaten_bug() {
 bool Bug::status() {
     return this->alive;
 }
+void Bug::winnerbugsize(int size) {
+    this->size+size;
+}

@@ -58,7 +58,7 @@ int main() {
              << "3. Tap the Bug Board (causes move all, then fight/eat)\n"
              << "4. Display Life History of all Bugs (path taken)\n"
              << "5. Display all Cells listing their Bugs\n"
-             << "6. Run simulation (generates a Tap every second)\n"
+             << "6. Eat Functionality \n"
              << "7. Exit (write Life History of all Bugs to file)\n"
              << "Enter your choice: ";
         cin >> choice;
@@ -85,8 +85,7 @@ int main() {
                 b1.display_all_cells();
                 break;
             case 6:
-
-                break;
+                b1.eat_functionality();
             case 7: {
                 ofstream outFile("bugs_life_history_date_time.out");
                 if (!outFile) {

@@ -9,7 +9,7 @@
 #include <vector>
 #include <iostream>
 #include <fstream>
-
+#include <algorithm>
 using namespace std;
 class Board {
 private:
@@ -58,6 +58,10 @@ public:
         }
     }
     void display_all_cells(){
+        for (auto& cell : cells) {
+            cell.isocupied = false;
+            cell.bug_occupying.clear();
+        }
         for(vector<Cell>::iterator i=cells.begin();i!=cells.end();i++){
             for(vector<Bug*>::iterator j=bugs.begin();j!=bugs.end();j++){
                 if((*j)->giveposition()==(*i).position_of_cell){
@@ -80,23 +84,31 @@ public:
     void eat_functionality() {
          for(vector<Cell>::iterator i=cells.begin();i!=cells.end();i++){
              if((*i).isocupied){
-                 Bug* bug=(*i).bug_occupying[0];//max sized Bug
+                 Bug* Winnerbug=(*i).bug_occupying[0];//max sized Bug
                  vector<Bug*>restBugs;//Have all the rest bugs other than Max sized one.
                  for(int j=1; j<(*i).bug_occupying.size();j++){
-                     if(bug->getsizeofbug()<(*i).bug_occupying[j]->getsizeofbug()){
-                         bug=(*i).bug_occupying[j];
+                     if(Winnerbug->getsizeofbug() < (*i).bug_occupying[j]->getsizeofbug()){
+                         Winnerbug=(*i).bug_occupying[j];
                      }
                      else{
                          restBugs.push_back((*i).bug_occupying[j]);
                      }
                  }
-                 //I will remove/erase that bug from orginal vectors list
-                 for(vector<Bug*>::iterator i=bugs.begin();i!=bugs.end();i++){
-                    for(vector<Bug*>::iterator j=restBugs.begin();j!=restBugs.end();j++) {
-                        if ((*i) == (*j)) {
-                            (*i)->eaten_bug();
-                        }
-                    }
+                 //I will remove/erase that Winnerbug from orginal vectors list
+                 for(vector<Bug*>::iterator i=restBugs.begin();i!=restBugs.end();i++){
+                     vector<Bug*>::iterator removebug= find(bugs.begin(), bugs.end(),*i);//Basically removebug will be the vectro<Bug*>type iterator .find gives us iterator in return .
+                     if(removebug!=bugs.end()){
+                         bugs.erase(removebug);
+                     }
+                     for(vector<Bug*>::iterator j=bugs.begin();j!=bugs.end();j++){
+                         if(Winnerbug==*j){
+                             int sizeofwinnerbug=(*j)->getsizeofbug();
+                             int sizeofloserbug=(*i)->getsizeofbug();
+                             int Finalsize=sizeofwinnerbug+sizeofloserbug;
+                             (*j)->winnerbugsize(Finalsize);
+                         }
+                     }
+                     (*i)->eaten_bug();
                  }
 
              }

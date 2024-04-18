@@ -23,6 +23,7 @@ bool Crawler::isWayBlocked() {
 }
 void Crawler::move() {
     {
+        path.clear();//use to clear the path after every new tap..
         if (isWayBlocked() == true) {
             int dir;
             if (this->direction == 1 || this->direction == 2 || this->direction == 3 || this->direction == 4) {

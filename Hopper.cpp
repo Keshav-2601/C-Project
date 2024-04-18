@@ -7,6 +7,7 @@ using namespace std;
 
 void Hopper::move() {
     {
+        path.clear();
         if(isWayBlocked()== true){
             int dir;
             if(this->direction==1 ||this->direction==2||this->direction==3||this->direction==4){
