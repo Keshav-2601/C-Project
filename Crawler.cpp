@@ -7,22 +7,24 @@
 using namespace std;
 
 bool Crawler::isWayBlocked() {
-    if(this->position.first==0 && this->position.second<=9 && this->direction==3){
-        return true;
-    }
-    if(this->position.first<=9 && this->position.second==0 && this->direction==4){
-        return true;
-    }
-    if(this->position.first==9 && this->position.second>=9 && this->direction==2){
-        return true;
-    }
-    if(this->position.first>=9 && this->position.second==9 && this->direction==1){
-        return true;
-    }
-    return false;
+    {
+        if(0<=this->position.first<=9 && this->position.second<=0 && this->direction==3){
+            return true;
+        }
+        if(this->position.first<=0 && 0<=this->position.second<=9 && this->direction==4){
+            return true;
+        }
+        if(this->position.first>=9 && 0<=this->position.second<=9 && this->direction==2){
+            return true;
+        }
+        if(0<=this->position.first<=9 && this->position.second>=9 && this->direction==1){
+            return true;
+        }
+        return false;
+    };
 }
 void Crawler::move() {
-    {
+        srand(time(0));
         path.clear();//use to clear the path after every new tap..
         if (isWayBlocked() == true) {
             int dir;
@@ -57,5 +59,4 @@ void Crawler::move() {
             }
 
         }
-    }
 }

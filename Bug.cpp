@@ -76,3 +76,6 @@ bool Bug::status() {
 void Bug::winnerbugsize(int size) {
     this->size+size;
 }
+int Bug::givedirection() {
+    return this->direction;
+}

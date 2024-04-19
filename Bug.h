@@ -38,7 +38,7 @@ public:
     pair<int,int> giveposition();
     string typeofbug();
     int ids();
-
+    int givedirection();
     int getsizeofbug();
     void eaten_bug();
     void winnerbugsize(int size);

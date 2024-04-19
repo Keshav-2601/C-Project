@@ -6,7 +6,7 @@
 using namespace std;
 
 void Hopper::move() {
-    {
+        srand(time(0));
         path.clear();
         if(isWayBlocked()== true){
             int dir;
@@ -42,21 +42,19 @@ void Hopper::move() {
 
         }
     }
-}
+
 bool Hopper::isWayBlocked() {
-    {
-        if(this->position.first==0 && this->position.second<=9 && this->direction==3){
-            return true;
-        }
-        if(this->position.first>=9 && this->position.second==0 && this->direction==4){
-            return true;
-        }
-        if(this->position.first==9 && this->position.second>=9 && this->direction==2){
-            return true;
-        }
-        if(this->position.first>=9 && this->position.second==9 && this->direction==1){
-            return true;
-        }
-        return false;
-    };
+    if(0<=this->position.first<=9 && this->position.second<=0 && this->direction==3){
+        return true;
+    }
+    if(this->position.first<=0 && 0<=this->position.second<=9 && this->direction==4){
+        return true;
+    }
+    if(this->position.first>=9 && 0<=this->position.second<=9 && this->direction==2){
+        return true;
+    }
+    if(0<=this->position.first<=9 && this->position.second>=9 && this->direction==1){
+        return true;
+    }
+    return false;
 }

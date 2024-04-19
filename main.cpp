@@ -55,7 +55,7 @@ int main() {
         cout << "\nMenu Items\n"
              << "1. Display all Bugs\n"
              << "2. Find a Bug (given an id)\n"
-             << "3. Tap the Bug Board (causes move all, then fight/eat)\n"
+             << "3. Tap the Bug Board ()\n"
              << "4. Display Life History of all Bugs (path taken)\n"
              << "5. Display all Cells listing their Bugs\n"
              << "6. Eat Functionality \n"

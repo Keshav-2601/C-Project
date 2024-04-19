@@ -58,10 +58,7 @@ public:
         }
     }
     void display_all_cells(){
-        for (auto& cell : cells) {
-            cell.isocupied = false;
-            cell.bug_occupying.clear();
-        }
+
         for(vector<Cell>::iterator i=cells.begin();i!=cells.end();i++){
             for(vector<Bug*>::iterator j=bugs.begin();j!=bugs.end();j++){
                 if((*j)->giveposition()==(*i).position_of_cell){
@@ -76,7 +73,7 @@ public:
             }
             if((*i).isocupied){
                 for(int j=0;j<(*i).bug_occupying.size();j++){
-                    cout<<"{"<<(*i).position_of_cell.first<<","<<(*i).position_of_cell.second<<"}:"<<" "<<((*i).bug_occupying)[j]->typeofbug()<<" "<<((*i).bug_occupying)[j]->ids()<<" "<<((*i).bug_occupying)[j]->getsizeofbug()<<endl;
+                    cout<<"{"<<(*i).position_of_cell.first<<","<<(*i).position_of_cell.second<<"}:"<<" "<<((*i).bug_occupying)[j]->typeofbug()<<" "<<((*i).bug_occupying)[j]->ids()<<" "<<(*i).bug_occupying[j]->givedirection()<<" "<<((*i).bug_occupying)[j]->getsizeofbug()<<endl;
                 }
             }
         }
