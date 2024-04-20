@@ -58,7 +58,10 @@ public:
         }
     }
     void display_all_cells(){
-
+        for (auto& cell : cells) {
+            cell.isocupied = false;
+            cell.bug_occupying.clear();
+        }
         for(vector<Cell>::iterator i=cells.begin();i!=cells.end();i++){
             for(vector<Bug*>::iterator j=bugs.begin();j!=bugs.end();j++){
                 if((*j)->giveposition()==(*i).position_of_cell){
