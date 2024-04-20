@@ -13,7 +13,7 @@
 
 class Hopper: public Bug {
 private:
-    int length;//length means the lenagth hopper can hop to .
+    int length;//length means the length hopper can hop to .
 public:
 
     Hopper(string type,int id,pair<int,int>position,int direction,int size,int length){

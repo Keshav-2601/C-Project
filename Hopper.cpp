@@ -26,7 +26,8 @@ void Hopper::move() {
             dir = rand() % 4 + 1;
         } while (this->direction == dir);
         this->direction = dir;
-    } else {
+    }
+    else {
         if (this->direction == 1) { // Move north
             path.push_back(this->position);
             this->position.second += this->length;
