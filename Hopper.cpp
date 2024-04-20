@@ -28,19 +28,22 @@ void Hopper::move() {
         this->direction = dir;
     }
     else {
-        if (this->direction == 1) { // Move north
+        if (this->direction == 1) {
             path.push_back(this->position);
             this->position.second += this->length;
             path.push_back(this->position);
-        } else if (this->direction == 2) { // Move east
+        }
+        else if (this->direction == 2) {
             path.push_back(this->position);
             this->position.first += this->length;
             path.push_back(this->position);
-        } else if (this->direction == 3) { // Move south
+        }
+        else if (this->direction == 3) {
             path.push_back(this->position);
             this->position.second -= this->length;
             path.push_back(this->position);
-        } else if (this->direction == 4) { // Move west
+        }
+        else if (this->direction == 4) {
             path.push_back(this->position);
             this->position.first -= this->length;
             path.push_back(this->position);

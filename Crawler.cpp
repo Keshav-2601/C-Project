@@ -38,11 +38,14 @@ void Crawler::move() {
         path.push_back(this->position);
         if (this->direction == 1) {
             this->position.second++;
-        } else if (this->direction == 2) {
+        }
+        else if (this->direction == 2) {
             this->position.first++;
-        } else if (this->direction == 3) {
+        }
+        else if (this->direction == 3) {
             this->position.second--;
-        } else if (this->direction == 4) {
+        }
+        else if (this->direction == 4) {
             this->position.first--;
         }
         path.push_back(this->position);
